@@ -53,12 +53,41 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <lombok.version>1.16.14</lombok.version>
+        <gson.version>2.8.0</gson.version>
+        <guava.version>21.0</guava.version>
+        <fastjson.version>1.2.29</fastjson.version>
+        <!-- Plugins Version -->
         <mybatis.generator.version>1.3.3</mybatis.generator.version>
         <gatling.version>2.2.2</gatling.version>
         <gatling-maven-plugin.version>2.1.7</gatling-maven-plugin.version>
         <swagger2markup.version>1.0.1</swagger2markup.version>
         <asciidoctor.version>1.5.2</asciidoctor.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <defaultGoal>package</defaultGoal>
 
