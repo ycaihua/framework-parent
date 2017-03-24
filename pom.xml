@@ -61,6 +61,7 @@
         <log4j.version>1.2.17</log4j.version>
         <log4j2.version>2.7</log4j2.version>
         <logback.version>1.1.7</logback.version>
+        <spring-cloud.version>Brixton.SR6</spring-cloud.version>
         <!-- Plugins Version -->
         <mybatis.generator.version>1.3.3</mybatis.generator.version>
         <gatling.version>2.2.2</gatling.version>
@@ -70,6 +71,13 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -340,4 +348,32 @@
             </plugin>
         </plugins>
     </build>
+    <!--本地仓库配置 -->
+    <repositories>
+        <repository>
+            <id>ibaby_repo_group</id>
+            <name>iBaby repository group</name>
+            <url>http://192.168.1.206:8081/nexus/content/groups/ibaby_repository_group/</url>
+        </repository>
+    </repositories>
+    <!-- plugins 配置 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ibaby_repo_group</id>
+            <name>iBaby repository group</name>
+            <url>http://192.168.1.206:8081/nexus/content/groups/ibaby_repository_group/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!--上传配置 必须 -->
+    <distributionManagement>
+        <repository>
+            <id>ibaby_release</id>
+            <url>http://192.168.1.206:8081/nexus/content/repositories/ibaby_release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>ibaby_snapshot</id>
+            <url>http://192.168.1.206:8081/nexus/content/repositories/ibaby_snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
