@@ -220,7 +220,7 @@
                     <include>**/*.ftl</include>
                     <include>**/*.json</include>
                     <include>**/*.factories</include>
-                    <include>**/com.datatre.*</include>
+                    <include>**/*</include>
                 </includes>
                 <filtering>true</filtering>
             </resource>
